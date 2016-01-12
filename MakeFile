@@ -1,0 +1,14 @@
+CC=g++
+CFLAGS=-c 
+SOURCES=Main.cpp FileOp.cpp Display.cpp Search_h.cpp Search_s.cpp util.cpp
+OBJECTS=$(SOURCES:.cpp=.o)
+EXECUTABLE=Main
+
+all: $(SOURCES) $(EXECUTABLE)
+
+$(EXECUTABLE): $(OBJECTS)
+	$(CC) $(OBJECTS) -o $@
+
+.cpp.o:
+	$(CC) $(CFLAGS) $< -o $@
+
